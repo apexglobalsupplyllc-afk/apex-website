@@ -146,7 +146,7 @@ const ldJson = {
   "@type": "LocalBusiness",
   "name": "Apex Global Supply LLC",
   "description": "Veteran-owned wholesale and distribution partner bringing BLU Energy Drink to East Coast retailers.",
-  "email": "apexglobalsupply.llc@gmail.com",
+  "email": "contact@apexglobalsupply.co",
   "telephone": "+1-4107050922",
   "areaServed": ["Maryland", "Virginia", "Delaware", "Washington D.C.", "Pennsylvania", "New Jersey"],
   "address": { "@type": "PostalAddress", "addressRegion": "MD", "addressCountry": "US" }

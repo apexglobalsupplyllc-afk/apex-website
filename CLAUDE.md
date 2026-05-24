@@ -60,7 +60,7 @@ The following are non-negotiable:
 
 Tasks that may be requested in future sessions:
 
-1. **Update professional email** — Replace `apexglobalsupply.llc@gmail.com` everywhere with the new domain email (likely `sales@apexglobalsupply.com`). Update appears in: contact section, business form sidebar, footer, structured data JSON.
+1. ~~**Update professional email**~~ — Done. All instances updated to `contact@apexglobalsupply.co`.
 
 2. **Wire up form submissions** — The business inquiry form (in the `#business` section) currently shows a fake success message. Replace with real submission to Formspree or Web3Forms endpoint. Add a honeypot field for spam protection.
 
@@ -122,7 +122,7 @@ The site is static and can be hosted anywhere. Recommended deployment is Cloudfl
 - Business: Apex Global Supply LLC
 - Owner: Veteran, Maryland-based
 - Primary product line: BLU Energy Drink (7 flavors)
-- Current email: apexglobalsupply.llc@gmail.com (Gmail — to be replaced)
+- Current email: contact@apexglobalsupply.co
 - Current phone: 410-705-0922
 - Target territory: Maryland (HQ), Virginia, Delaware, D.C., Pennsylvania, New Jersey
 
