@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if you ever add a build process)
+node_modules/
+package-lock.json
+.env
+.env.local
+
+# Logs
+*.log
+
+# Build outputs (if added)
+dist/
+build/
+.cache/
+
+# Local development
+.netlify/
+.vercel/
