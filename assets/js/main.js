@@ -56,18 +56,42 @@ flavors.forEach((f, i) => {
 });
 
 // Form submission
-function submitForm(e) {
+async function submitForm(e) {
   e.preventDefault();
+  const form = e.target;
   const container = document.getElementById('form-container');
-  container.innerHTML = `
-    <div class="form-success">
-      <div class="form-success-icon">
-        <svg class="icon-xl" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-      </div>
-      <h3 style="font-family: 'Anton', sans-serif; font-size: 1.875rem; text-transform: uppercase; margin-bottom: 0.75rem;">Inquiry received.</h3>
-      <p style="color: rgba(255,255,255,0.7); max-width: 28rem;">Thank you. A member of the Apex team will reach out within one business day to discuss next steps.</p>
-    </div>
-  `;
+  const btn = form.querySelector('[type="submit"]');
+  const originalHTML = btn.innerHTML;
+
+  btn.disabled = true;
+  btn.innerHTML = 'Sending…';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    });
+    const data = await res.json();
+    if (data.success) {
+      container.innerHTML = `
+        <div class="form-success">
+          <div class="form-success-icon">
+            <svg class="icon-xl" fill="none" stroke="white" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h3 style="font-family: 'Anton', sans-serif; font-size: 1.875rem; text-transform: uppercase; margin-bottom: 0.75rem;">Inquiry received.</h3>
+          <p style="color: rgba(255,255,255,0.7); max-width: 28rem;">Thank you. A member of the Apex team will reach out within one business day to discuss next steps.</p>
+        </div>
+      `;
+    } else {
+      btn.disabled = false;
+      btn.innerHTML = originalHTML;
+      alert('Something went wrong. Please try again or email us at contact@apexglobalsupply.co');
+    }
+  } catch {
+    btn.disabled = false;
+    btn.innerHTML = originalHTML;
+    alert('Something went wrong. Please try again or email us at contact@apexglobalsupply.co');
+  }
 }
 
 // ===== SCROLL REVEAL ANIMATIONS =====
